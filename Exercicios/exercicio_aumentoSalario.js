@@ -8,7 +8,7 @@ const prompt = require("prompt-sync")();
 const salario = Number(prompt("Digite o seu salário atual: "));
 const porc = Number(prompt("Digite a porcentagem do aumento: "));
 
-aumento = salario * (porc/100);
-res = salario + aumento;
+const aumento = salario * (porc/100);
+const res = salario + aumento;
 
 console.log("Seu salário após o aumento é de:", res);
