@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|PT++Mono); /*importar uma URL (no caso uma fonte)*/
+
+:root{ /*declara o que vai ser padrao, para nao ficar repetitivo*/
+    --primary-color: rgb(188, 238, 241);
+    --second-color: DimGrey;
+    --tertiary-color: Gainsboro;
+}
+
+body{ 
+    background-color: var(--primary-color); 
+    font-size: 30px;
+    font-family: Lato, sans-serif; 
+}
+
+#container{
+    background: var(--second-color);
+    margin: 100px auto;
+    width: 388px;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.res{
+    padding: 25px;
+}
+
+.resultado{
+    background: var(--tertiary-color);
+    padding: 5px;
+    width: 324px;
+    color: var(--second-color);
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.fila1{
+    padding: 0 0 5px 25px;
+}
+
+.fila2{
+    padding: 0 0 5px 25px;
+}
+
+.fila3{
+    padding: 0 0 5px 25px;
+}
+
+.fila4{
+    padding: 0 0 5px 25px;
+}
+
+.fila5{
+    padding: 0 0 5px 25px;
+}
+
+.fila6{
+    margin-left: 282px;
+    margin-top: -70px;
+    margin-bottom: -67px;
+}
+
+.btn{
+    padding: 15px;
+    font-weight: bold;
+    font-size: 25px;
+    width: 80px;
+    height: 65px;
+    border-radius: 5px;
+    background: var(--tertiary-color);
+}
+
+.clear{
+    width: 165px;
+}
+
+.zero{
+    width: 165px;
+}
+
+.equal{
+    height: 138px;
+}

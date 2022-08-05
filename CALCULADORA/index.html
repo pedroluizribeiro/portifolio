@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculadora</title>
+</head>
+<body>
+  <div id="container">
+    <div class="res" id="result">
+      <input type="text" placeholder="0" disabled class="resultado" id="resultado">
+    </div>
+    <div class="fila1">
+      <button onclick="calculate('acao', 'c')" type="button" class="btn clear" id="c">C</button>
+      <button onclick="calculate('acao', '/')" type="button" class="btn" id="/">/</button>
+      <button onclick="calculate('acao', '*')" type="button" class="btn" id="x">*</button>
+    </div>
+    <div class="fila2">
+      <button onclick="calculate('valor', '7')" type="button" class="btn" id="7">7</button>
+      <button onclick="calculate('valor', '8')" type="button" class="btn" id="8">8</button>
+      <button onclick="calculate('valor', '9')" type="button" class="btn" id="9">9</button>
+      <button onclick="calculate('acao', '-')" type="button" class="btn" id="-">-</button>
+    </div>
+    <div class="fila3">
+      <button onclick="calculate('valor', '4')" type="button" class="btn" id="4">4</button>
+      <button onclick="calculate('valor', '5')" type="button" class="btn" id="5">5</button>
+      <button onclick="calculate('valor', '6')" type="button" class="btn" id="6">6</button>
+      <button onclick="calculate('acao', '+')" type="button" class="btn" id="+">+</button>
+    </div>
+    <div class="fila4">
+      <button onclick="calculate('valor', '1')" type="button" class="btn" id="1">1</button>
+      <button onclick="calculate('valor', '2')" type="button" class="btn" id="2">2</button>
+      <button onclick="calculate('valor', '3')" type="button" class="btn" id="3">3</button>
+    </div>
+    <div class="fila6">
+      <button onclick="calculate('acao', '=')" type="button" class="btn equal" id="=">=</button>
+    </div>
+    <div class="fila5">
+      <button onclick="calculate('valor', '0')" type="button" class="btn zero" id="0">0</button>
+      <button onclick="calculate('acao', '.')" type="button" class="btn" id=".">.</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
