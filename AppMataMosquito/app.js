@@ -11,6 +11,12 @@ ajustaTamanhoPalcoJogo();
 
 
 function posicaoRandomica(){
+
+  //remover mosquito anterior (caso exista)
+  if(document.getElementById('mosquito')){
+    document.getElementById('mosquito').remove();
+  }
+
   //criar posições randomicas na tela
   var posicaoX = Math.floor(Math.random() * largura) - 90;
   var posicaoY = Math.floor(Math.random() * altura) - 90;
@@ -26,6 +32,7 @@ function posicaoRandomica(){
   var mosquito = document.createElement('img'); //cria uma imagem
   mosquito.src = 'imagens/mosca.png'; //recupera a variavel criada e acessa seu atributo (no caso o src)
   mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio();//recupera a variavel criada e acessa seu atributo (no caso a class)
+  mosquito.id = 'mosquito'; //define um id para o elemento html
   document.body.appendChild(mosquito); //cria/insere um "filho"/elemento dentro do body
 
   //insere a imagem em posições randomicas
@@ -61,3 +68,8 @@ function ladoAleatorio(){
       return 'ladoB';
   }
 } //a chamada da função é feita na criação do elemento html, no className
+
+//especifica um intervalo de tempo em ms. A ação é uma função responsável por chamar o médtodo posicaoRandomica
+setInterval(() => {
+  posicaoRandomica();
+}, 1000);
