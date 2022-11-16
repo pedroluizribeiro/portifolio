@@ -1,6 +1,8 @@
 //encontar a altura e largura da pagina atraves do objeto WINDOW
 var altura = 0;
 var largura = 0;
+var vidas = 1; //variavel criada para representar o id das imagens vida
+
 function ajustaTamanhoPalcoJogo(){
   altura = window.innerHeight;
   largura = window.innerWidth;
@@ -15,7 +17,15 @@ function posicaoRandomica(){
   //remover mosquito anterior (caso exista)
   if(document.getElementById('mosquito')){
     document.getElementById('mosquito').remove();
-  }
+
+    //atualiza o coração de cheio para vazio caso não consiga clicar no mosquito.
+    if(vidas > 3){
+      alert('interrompe o jogo (GAME OVER)')
+    }else{
+      document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png";
+      vidas++; //incremento criado para que acesse os id's v2 e v3
+    };
+  };
 
   //criar posições randomicas na tela
   var posicaoX = Math.floor(Math.random() * largura) - 90;
@@ -34,6 +44,10 @@ function posicaoRandomica(){
   mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio();//recupera a variavel criada e acessa seu atributo (no caso a class)
   mosquito.id = 'mosquito'; //define um id para o elemento html
   document.body.appendChild(mosquito); //cria/insere um "filho"/elemento dentro do body
+  //atribui a função de click ao elemento criado
+  mosquito.onclick = function(){
+    this.remove();
+  };
 
   //insere a imagem em posições randomicas
   mosquito.style.left = posicaoX + 'px'; //acessa o elemento style left do objeto mosquito e atribui a posicao
