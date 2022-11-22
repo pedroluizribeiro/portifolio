@@ -20,7 +20,8 @@ function posicaoRandomica(){
 
     //atualiza o coração de cheio para vazio caso não consiga clicar no mosquito.
     if(vidas > 3){
-      alert('interrompe o jogo (GAME OVER)')
+      //redireciona para outra pagina html
+      window.location.href = 'fim_de_jogo.html';
     }else{
       document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png";
       vidas++; //incremento criado para que acesse os id's v2 e v3
