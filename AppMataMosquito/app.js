@@ -2,6 +2,7 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1; //variavel criada para representar o id das imagens vida
+var tempo = 10; //variavel criada para o cronometro (10 segundos)
 
 function ajustaTamanhoPalcoJogo(){
   altura = window.innerHeight;
@@ -11,6 +12,17 @@ function ajustaTamanhoPalcoJogo(){
 };
 ajustaTamanhoPalcoJogo();
 
+//criado um cronometro para finalização/vitoria do jogo
+var cronometro = setInterval(function(){
+  tempo -= 1; //a função diz que o tempo declarado recebe ele mesmo menos 1
+
+  if(tempo < 0){
+    clearInterval(cronometro, criaMosquito); //oposto de setInterval, elimina a contagem do cronometro e a inserção das moscas.
+    window.location.href = 'vitoria.html';
+  }else{
+    document.getElementById('cronometro').innerHTML = tempo;
+  }
+}, 1000);
 
 function posicaoRandomica(){
 
@@ -84,7 +96,10 @@ function ladoAleatorio(){
   }
 } //a chamada da função é feita na criação do elemento html, no className
 
+//esse código é adicionado fora de qualquer função para que o tempo comece com o numero desejado
+document.getElementById('cronometro').innerHTML = tempo;
+
 //especifica um intervalo de tempo em ms. A ação é uma função responsável por chamar o médtodo posicaoRandomica
-setInterval(() => {
+var criaMosquito = setInterval(() => {
   posicaoRandomica();
-}, 1000);
+}, 2000);
