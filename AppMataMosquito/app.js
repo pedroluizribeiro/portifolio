@@ -1,8 +1,12 @@
+        /* NO JAVA SCRIPT, MUITAS VEZES IREMOS ADICIONANDO NOVAS LINHAS DE CÓDIGO ACIMA DE CÓDIGOS JA PRONTOS. ISSO PORQUE O JS
+            LÊ A ESTRUTURA DE CIMA PARA BAIXO.*/
+
 //encontar a altura e largura da pagina atraves do objeto WINDOW
 var altura = 0;
 var largura = 0;
 var vidas = 1; //variavel criada para representar o id das imagens vida
-var tempo = 10; //variavel criada para o cronometro (10 segundos)
+var tempo = 15; //variavel criada para o cronometro (10 segundos)
+var criaMosquitoTempo = 1500 //variavel que indica de quantos segundos o mosquito aparece
 
 function ajustaTamanhoPalcoJogo(){
   altura = window.innerHeight;
@@ -99,7 +103,20 @@ function ladoAleatorio(){
 //esse código é adicionado fora de qualquer função para que o tempo comece com o numero desejado
 document.getElementById('cronometro').innerHTML = tempo;
 
+//definindo o nível do jogo
+var nivel = window.location.search; //o comando search recupera o parametro a direita do ponto de interrogação (inclusive o ponto)
+nivel = nivel.replace('?', ''); //replace remove um parametro desejado e substitui por outro desejado
+
+if(nivel === 'normal'){
+  criaMosquitoTempo = 1500;
+}else if(nivel === 'hard'){
+  criaMosquitoTempo = 900;
+}else if(nivel === 'expert'){
+  criaMosquitoTempo = 750;
+}
+
 //especifica um intervalo de tempo em ms. A ação é uma função responsável por chamar o médtodo posicaoRandomica
 var criaMosquito = setInterval(() => {
   posicaoRandomica();
-}, 2000);
+}, criaMosquitoTempo);
+
